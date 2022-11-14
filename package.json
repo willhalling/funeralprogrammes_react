@@ -6,7 +6,22 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "prepare": "husky install",
+    "clean": "rm -rf node_modules/ && rm -rf yarn.lock",
+    "format": "prettier --write **/*.{ts,tsx,css} --config ./.prettierrc"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "yarn  eslint",
+      "yarn  format"
+    ]
   },
   "dependencies": {
     "@types/node": "18.11.9",
@@ -18,5 +33,11 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "4.8.4"
+  },
+  "devDependencies": {
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1"
   }
 }

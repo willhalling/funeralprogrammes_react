@@ -4,6 +4,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+  console.log('hello their')
   return (
     <div className={styles.container}>
       <Head>

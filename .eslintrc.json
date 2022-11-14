@@ -1,6 +1,24 @@
 {
-  "extends": "next/core-web-vitals",
-  "plugins": ["react","simple-import-sort"],
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "tsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "prettier","simple-import-sort"],
   "rules": {
     "camelcase": "error",
     "no-duplicate-imports": "error",
@@ -17,5 +35,10 @@
     "@typescript-eslint/no-empty-function":"off",
     "react/no-unknown-property":"off",
     "react/no-unescaped-entities ":"off"
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
   }
 }

@@ -24,26 +24,35 @@
     ]
   },
   "dependencies": {
+    "@emotion/cache": "latest",
+    "@emotion/react": "latest",
+    "@emotion/server": "latest",
+    "@emotion/styled": "latest",
+    "@mui/icons-material": "^5.10.14",
+    "@mui/material": "^5.10.14",
+    "@mui/styles": "^5.10.14",
+    "@next/font": "^13.0.3",
     "next": "13.0.3",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@svgr/webpack": "^6.5.1",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.8",
+    "@typescript-eslint/eslint-plugin": "^5.30.7",
+    "@typescript-eslint/parser": "^5.30.7",
     "eslint": "8.27.0",
     "eslint-config-next": "13.0.3",
-    "eslint-plugin-simple-import-sort": "^8.0.0",
-    "husky": "^8.0.2",
-    "lint-staged": "^13.0.3",
-    "prettier": "^2.7.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.30.1",
-    "@typescript-eslint/eslint-plugin": "^5.30.7",
-    "@typescript-eslint/parser": "^5.30.7",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
     "typescript": "4.8.4"
   }
 }

@@ -44,6 +44,7 @@ const ColorButton = styled(Button)<ButtonProps>(({ theme }: { theme: any }) => (
   color: theme.palette.common.white,
   backgroundColor: theme.palette.secondary.main,
   fontSize: '1rem',
+  fontWeight: '600',
   '&:hover': {
     backgroundColor: theme.palette.secondary[700],
   },

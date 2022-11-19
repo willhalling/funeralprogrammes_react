@@ -1,15 +1,13 @@
-import { Theme } from '@mui/material'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
-import Tooltip from '@mui/material/Tooltip'
-import { makeStyles } from '@mui/styles'
 import Link from 'next/link'
 
 import { DesktoAppLogo, MobileAppLogo } from '../../../utils/imageMapping'
+import { makeStyles } from '../../../utils/useStyles'
 import { MUIButton } from '../../atom'
 
-const useStyles = makeStyles((theme: any) => ({
+const useStyles = makeStyles()((theme: any) => ({
   container: {
     padding: '1.5rem',
     display: 'flex',
@@ -35,7 +33,7 @@ const useStyles = makeStyles((theme: any) => ({
   },
 }))
 export const Header: React.FC = () => {
-  const classes = useStyles()
+  const { classes } = useStyles()
 
   return (
     <AppBar position="static">

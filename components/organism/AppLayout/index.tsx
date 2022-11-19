@@ -1,10 +1,10 @@
 import { Container } from '@mui/material'
-import { makeStyles } from '@mui/styles'
 import React from 'react'
 
+import { makeStyles } from '../../../utils/useStyles'
 import { Footer, Header } from '../../molecules'
 
-const useStyles = makeStyles((theme: any) => ({
+const useStyles = makeStyles()((theme: any) => ({
   main: {
     maxWidth: '80rem',
     padding: '1.5rem',
@@ -20,7 +20,7 @@ interface IAppLayout {
   children: React.ReactNode
 }
 export const AppLayout: React.FC<IAppLayout> = ({ children }: IAppLayout) => {
-  const classes = useStyles()
+  const { classes } = useStyles()
   return (
     <div>
       <Header />

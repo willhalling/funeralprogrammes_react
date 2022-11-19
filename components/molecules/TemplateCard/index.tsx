@@ -1,12 +1,10 @@
-import { Box, Card, CardContent, CardMedia, Typography } from '@mui/material'
-import { makeStyles } from '@mui/styles'
+import { Box, Card, CardContent, Typography } from '@mui/material'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
 
-import { TemplaeImage2 } from '../../../utils/imageMapping'
+import { makeStyles } from '../../../utils/useStyles'
 
-const useStyles = makeStyles((theme: any) => ({
+const useStyles = makeStyles()((theme: any) => ({
   card: {
     background: theme.palette.primary[700],
     color: 'white',
@@ -49,7 +47,7 @@ const useStyles = makeStyles((theme: any) => ({
   },
 }))
 export const TemplateCard = ({ data }: any) => {
-  const classes = useStyles()
+  const { classes } = useStyles()
 
   return (
     <Card sx={{ maxWidth: 422 }} className={classes.card}>

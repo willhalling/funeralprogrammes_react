@@ -1,13 +1,13 @@
 import { Box, Typography } from '@mui/material'
-import { makeStyles } from '@mui/styles'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
 import { HomePageImage } from '../../../utils/imageMapping'
+import { makeStyles } from '../../../utils/useStyles'
 import { MUIButton } from '../../atom'
 
-const useStyles = makeStyles((theme: any) => ({
+const useStyles = makeStyles()((theme: any) => ({
   mainWrapper: {
     display: 'flex',
     flexDirection: 'column',
@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme: any) => ({
 }))
 
 export const Home: React.FC = () => {
-  const classes = useStyles()
+  const { classes } = useStyles()
   return (
     <Box className={classes.mainWrapper}>
       <Typography variant="h1" className={classes.text}>

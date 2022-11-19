@@ -1,7 +1,8 @@
 import { Box, Container } from '@mui/material'
-import { makeStyles } from '@mui/styles'
 import Link from 'next/link'
-const useStyles = makeStyles((theme: any) => ({
+
+import { makeStyles } from '../../../utils/useStyles'
+const useStyles = makeStyles()((theme: any) => ({
   container: {
     background: theme.palette.primary.main,
     width: '100vw',
@@ -29,7 +30,7 @@ const useStyles = makeStyles((theme: any) => ({
   },
 }))
 export const Footer = () => {
-  const classes = useStyles()
+  const { classes } = useStyles()
   return (
     <Box className={classes.container}>
       <Container maxWidth="xl" className={classes.wrapper}>

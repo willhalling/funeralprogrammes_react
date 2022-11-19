@@ -1,5 +1,12 @@
+import { TemplateCard } from '../../components/molecules'
+import { Templates } from '../../components/organism/Templates'
+
 const TemplatePage = () => {
-  return <div>template</div>
+  return (
+    <div>
+      <Templates />
+    </div>
+  )
 }
 
 export default TemplatePage

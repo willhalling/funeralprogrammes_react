@@ -1,5 +1,4 @@
 import { Grid } from '@mui/material'
-import React from 'react'
 
 import { InputField } from '../../atom'
 import { UploadButton } from '../../molecules'

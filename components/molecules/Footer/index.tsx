@@ -15,7 +15,7 @@ const useStyles = makeStyles()((theme: any) => ({
     maxWidth: '80rem',
   },
   copyright: {
-    color: theme.palette.primary[400],
+    color: theme.palette.secondary[400],
     fontSize: '1rem',
   },
   footerItem: {

@@ -12,7 +12,6 @@ const useStyles = makeStyles()((theme: any) => ({
   container: {
     minHeight: '90vh',
     background: 'rgba(31,41,55,1)',
-    color: 'white',
   },
 }))
 
@@ -25,7 +24,9 @@ export const AppLayout: React.FC<IAppLayout> = ({ children }: IAppLayout) => {
     <div>
       <Header />
       <main className={classes.container}>
-        <Container className={classes.main}>{children}</Container>
+        <Container maxWidth="xl" className={classes.main}>
+          {children}
+        </Container>
       </main>
       <Footer />
     </div>

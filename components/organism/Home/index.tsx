@@ -21,6 +21,7 @@ const useStyles = makeStyles()((theme: any) => ({
     letterSpacing: '1px',
     lineHeight: 1.5,
     marginBottom: 30,
+    color: 'white',
     [theme.breakpoints.up('sm')]: {
       fontSize: '3.2rem !important',
     },
@@ -29,6 +30,7 @@ const useStyles = makeStyles()((theme: any) => ({
     fontWeight: '700 !important',
     color: 'rgba(251, 191, 36,1)',
     textDecoration: 'underline',
+    textUnderlineOffset: 5,
   },
   homeImage: {
     width: '100% !important',

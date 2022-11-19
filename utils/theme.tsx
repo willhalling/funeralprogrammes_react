@@ -14,7 +14,7 @@ const theme: Theme = createTheme({
   palette: {
     primary: {
       main: '#111827',
-      '600': '#57534e',
+      '600': 'rgba(75, 85, 99, 1)',
       '900': '#4b5563',
       '700': 'rgba(55,65,81,1)',
       '400': 'rgba(75,85,99,1)',
@@ -26,6 +26,7 @@ const theme: Theme = createTheme({
       main: '#991b1b',
       '800': '#991b1b',
       '700': '#b91c1c',
+      '400': 'rgba(156, 163, 175, 1)',
     },
     error: {
       main: red.A400,

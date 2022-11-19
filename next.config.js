@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+const webpack = require('webpack')
 const nextConfig = {
   swcMinify: true,
   webpack(config, { isServer }) {

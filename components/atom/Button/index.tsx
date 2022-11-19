@@ -28,7 +28,7 @@ interface IMUIButton {
   size?: number
   isLoading?: boolean
   className?: string
-  onClick: (args: any) => void
+  onClick?: (args: any) => void
   children: React.ReactNode
   disabled?: boolean
 }

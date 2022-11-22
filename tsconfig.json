@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx","custom.d.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx","custom.d.ts", "lib/media-queries.js", "lib/drawText.js"],
   "exclude": ["node_modules"]
 }

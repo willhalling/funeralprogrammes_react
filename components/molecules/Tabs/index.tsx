@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography'
 import * as React from 'react'
 
 import { makeStyles } from '../../../utils/useStyles'
+import { Canvas } from '../../organism/Canvas'
 
 interface TabPanelProps {
   children?: React.ReactNode
@@ -39,11 +40,11 @@ function a11yProps(index: number) {
   }
 }
 
-const useStyles = makeStyles()((theme: any) => ({
+const useStyles = makeStyles()(() => ({
   tab: {
     color: 'white',
     fontSize: '1rem',
-    fontWeight: 600,
+    fontWeight: 700,
     border: '1px solid rgba(31,41,55,1)',
   },
   indicator: {
@@ -58,6 +59,7 @@ const useStyles = makeStyles()((theme: any) => ({
     borderTopLeftRadius: '4px !important',
   },
 }))
+
 export const CustomTabs = () => {
   const { classes } = useStyles()
   const [value, setValue] = React.useState(0)
@@ -106,7 +108,7 @@ export const CustomTabs = () => {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        Item One
+        <Canvas />
       </TabPanel>
       <TabPanel value={value} index={1}>
         Item Two

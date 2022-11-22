@@ -1,8 +1,6 @@
-import '@firebase/firestore'
-import '@firebase/storage'
-import 'firebase/firestore'
-
-import * as firebase from '@firebase/app'
+import { initializeApp } from 'firebase/app'
+import firebase from 'firebase/compat/app'
+import { getFirestore } from 'firebase/firestore'
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDnZH7gMUdw6CCVTnz5bde9KJSt82f-nfE',
@@ -12,11 +10,11 @@ const firebaseConfig = {
   messagingSenderId: '418950795775',
   appId: '1:418950795775:web:dfee61df5d9d2c246dd7ca',
 }
+if (!firebase.apps.length) {
+  initializeApp(firebaseConfig)
+}
 
-const firebaseApp: any = firebase.initializeApp(firebaseConfig)
-
-const database = firebaseApp.firestore()
-const storage = firebaseApp.storage()
+const firestore = getFirestore()
 
 // export utils/refs
-export { database, firebase, storage }
+export { firestore }

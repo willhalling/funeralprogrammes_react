@@ -62,7 +62,7 @@ export const Canvas = () => {
     // need setTimeout otherwise image not ready
     setTimeout(async () => {
       if (imageBase64) {
-        // await this.$refs.canvasContainer.drawPhoto();
+        await this.$refs.canvasContainer.drawPhoto()
       }
     }, 0)
   }

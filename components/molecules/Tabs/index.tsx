@@ -3,6 +3,8 @@ import Tab from '@mui/material/Tab'
 import Tabs from '@mui/material/Tabs'
 import Typography from '@mui/material/Typography'
 import * as React from 'react'
+import { useState } from 'react'
+import { BOOKLET } from '../../../constants/booklet'
 
 import { makeStyles } from '../../../utils/useStyles'
 import { Canvas } from '../../organism/Canvas'
@@ -60,14 +62,15 @@ const useStyles = makeStyles()(() => ({
   },
 }))
 
-export const CustomTabs = () => {
+interface CustomTabsInterface {
+  value: number
+  handleChange: any
+  booklet: any
+  canvasList: any
+}
+
+export const CustomTabs = (props: CustomTabsInterface) => {
   const { classes } = useStyles()
-  const [value, setValue] = React.useState(0)
-
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue)
-  }
-
   return (
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'rgba(156, 163, 175, 1)' }}>
@@ -77,45 +80,33 @@ export const CustomTabs = () => {
           }}
           indicatorColor="primary"
           textColor="primary"
-          value={value}
-          onChange={handleChange}
+          value={props.value}
+          onChange={props.handleChange}
           aria-label="basic tabs example"
         >
-          <Tab
-            className={classes.tab}
-            classes={{
-              selected: classes.selected,
-            }}
-            label="Item One"
-            {...a11yProps(0)}
-          />
-          <Tab
-            className={classes.tab}
-            classes={{
-              selected: classes.selected,
-            }}
-            label="Item Two"
-            {...a11yProps(1)}
-          />
-          <Tab
-            className={classes.tab}
-            classes={{
-              selected: classes.selected,
-            }}
-            label="Item Three"
-            {...a11yProps(2)}
-          />
+          {BOOKLET.pages.map((page) => (
+            <Tab
+              key={page.title}
+              className={classes.tab}
+              classes={{
+                selected: classes.selected,
+              }}
+              label={page.title}
+              {...a11yProps(0)}
+            />
+          ))}
         </Tabs>
       </Box>
-      <TabPanel value={value} index={0}>
-        <Canvas />
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        Item Two
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        Item Three
-      </TabPanel>
+      {BOOKLET.pages.map((page, idx) => (
+        <TabPanel value={props.value} index={idx} key={page.title}>
+          <Canvas
+            key={BOOKLET.pages[idx].title}
+            {...props.booklet?.booklet}
+            canvas={props.canvasList[idx]}
+            idx={idx}
+          />
+        </TabPanel>
+      ))}
     </Box>
   )
 }

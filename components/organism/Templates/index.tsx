@@ -45,7 +45,9 @@ export const Templates = () => {
       <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 1, sm: 2, md: 3 }}>
         {TEMPLATES.map((el, index) => (
           <Grid item xs={1} key={index}>
-            <TemplateCard key={index} data={el} />
+            <Link href={'/template/' + el.slug}>
+              <TemplateCard key={index} data={el} />
+            </Link>
           </Grid>
         ))}
       </Grid>

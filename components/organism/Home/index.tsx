@@ -1,6 +1,7 @@
 import { Box, Typography } from '@mui/material'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import React from 'react'
 
 import { HomePageImage } from '../../../utils/imageMapping'
@@ -49,6 +50,7 @@ const useStyles = makeStyles()((theme: any) => ({
 
 export const Home: React.FC = () => {
   const { classes } = useStyles()
+  const router = useRouter()
   return (
     <Box className={classes.mainWrapper}>
       <Typography variant="h1" className={classes.text}>
@@ -67,7 +69,12 @@ export const Home: React.FC = () => {
         alt="home page image"
         className={classes.homeImage}
       />
-      <MUIButton onClick={() => {}} className={classes.button}>
+      <MUIButton
+        onClick={() => {
+          router.push('/templates')
+        }}
+        className={classes.button}
+      >
         Choose Template
       </MUIButton>
     </Box>

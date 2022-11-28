@@ -8,12 +8,12 @@ const useStyle = makeStyles()((theme: any) => ({
     fontWeight: '600',
   },
 }))
-export const UploadButton = () => {
+export const UploadButton = (props: any) => {
   const { classes } = useStyle()
   return (
     <Button variant="contained" color="secondary" component="label" className={classes.button}>
       Upload
-      <input hidden accept="image/*" multiple type="file" />
+      <input hidden accept="image/*" multiple type="file" onChange={props.onChange} />
     </Button>
   )
 }

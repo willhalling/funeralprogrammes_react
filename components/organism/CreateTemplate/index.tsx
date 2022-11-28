@@ -75,6 +75,7 @@ export const CreateTemplate = (props: TemplateSlugInterface) => {
       })
 
       if (page.backgroundImage && page.backgroundImage.length > 0) {
+        console.log("78")
         fabric.Image.fromURL(page.backgroundImage, function (img) {
           scaleAndPositionImage(img, canvas, booklet)
         })
@@ -88,17 +89,17 @@ export const CreateTemplate = (props: TemplateSlugInterface) => {
 
   // scale and position the background image
   function scaleAndPositionImage(img: any, canvas: any, booklet: any) {
-    const canvasAspect = canvas.width / canvas.height
-    const imgAspect = img.width / img.height
-    let left, top, scaleFactor
+    var canvasAspect = canvas.width / canvas.height
+    var imgAspect = img.width / img.height
+    var left, top, scaleFactor
 
     // scale
     if (canvasAspect >= imgAspect) {
-      const scaleFactor: any = canvas.width / img.width
+      var scaleFactor: any = canvas.width / img.width
       left = 0
       top = -(img.height * scaleFactor - canvas.height) / 2
     } else {
-      const scaleFactor: any = canvas.height / img.height
+      var scaleFactor: any = canvas.height / img.height
       top = 0
       left = -(img.width * scaleFactor - canvas.width) / 2
     }
